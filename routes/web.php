@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\LikeDislikeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [ArticleController::class, 'index']);
+Route::post('articles/{article}/like', [LikeDislikeController::class, 'like'])->name('like');
+Route::post('articles/{article}/dislike', [LikeDislikeController::class, 'dislike'])->name('dislike');
