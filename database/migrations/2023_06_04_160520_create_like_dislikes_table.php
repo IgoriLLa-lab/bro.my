@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('like_dislikes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('article_id')->constrained()->onDelete('cascade');
+            $table->integer('sum');
             $table->timestamps();
         });
     }
