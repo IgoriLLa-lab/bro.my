@@ -12,6 +12,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
+        $schedule->command('app:parse-lenta-ru-news-command')->daily();
         // $schedule->command('inspire')->hourly();
     }
 
