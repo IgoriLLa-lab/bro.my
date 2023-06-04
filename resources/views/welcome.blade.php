@@ -21,6 +21,16 @@
                         @endforeach
                     @endif
                 </ul>
+                <p>
+                <form method="POST" action="{{ route('like', $article) }}">
+                    @csrf
+                    <button type="submit">Нравится</button>
+                </form>
+                <form method="POST" action="{{ route('dislike', $article) }}">
+                    @csrf
+                    <button type="submit">Ненравится</button>
+                </form>
+                </p>
             </li>
         @endforeach
     </ul>
