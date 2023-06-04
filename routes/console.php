@@ -1,5 +1,6 @@
 <?php
 
+use App\Console\Commands\ParseLentaRuNewsCommand;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
 
@@ -17,3 +18,7 @@ use Illuminate\Support\Facades\Artisan;
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');
+
+Artisan::command(ParseLentaRuNewsCommand::class, function () {
+    $this->info('Команда парсинга новостей с ленты');
+})->describe('Парсинг новостей с ленты');
